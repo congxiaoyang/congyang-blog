@@ -1,0 +1,8 @@
+/* 设置变量 */
+$col-white:#fff;
+$col-font-basic:#333;
+$basic-distance:10px;
+/* 函数 */
+@function set-distance ($n){
+  @return $n * $basic-distance;
+}
