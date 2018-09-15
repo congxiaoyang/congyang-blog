@@ -7,9 +7,9 @@
       <el-col :xs="24" :sm="24" :md="18" :lg="18">
         <div class="content">
           <div class="blog-container">
-            <div class="item">
-              <router-link to="/blogDetails" class="title">Vue搭建个人博客</router-link>
-              <div class="content">npm run dev</div>
+            <div v-for="blog in blogs" class="item">
+              <router-link to="/blogDetails" class="title">{{blog.title}}</router-link>
+              <div class="content">{{blog.abstract}}</div>
               <div class="foo clearfix">
                 <div class="fl">
                   <router-link class="goDetailsBtn" to="/blogDetails">
@@ -17,13 +17,12 @@
                   </router-link>
                 </div>
                 <div class="fr">
-                  <P class="date">2018-08-30 13：34</P>
+                  <P class="date">{{blog.publish_date}}</P>
                 </div>
               </div>
             </div>
           </div>
           <div class="article-container">
-
           </div>
         </div>
       </el-col>
@@ -38,17 +37,26 @@
     components:{Aside},
     data (){
       return{
-
+        blogs: ''
       }
+    },
+    mounted:function(){  // 测试，
+      var _this = this;
+      this.$http.get('/api/getBlogs',{
+        params: {page: 1,size:10,sort:'time'}
+      })
+        .then((res) =>{
+          var status = res.data.status,
+            data = res.data.data,
+            msg = res.data.msg;
+
+          if(status == 'error'){
+            this.$message.error(msg);
+          }else{
+            _this.blogs = data;
+          }
+      })
     }
-    // mounted:function(){  // 测试，
-    //   this.$http.get('/api/getValue',{
-    //     params: {id: 0}
-    //   })
-    //     .then((res) =>{
-    //       this.$message.success(res.data.data);
-    //   })
-    // }
   }
 </script>
 
@@ -61,6 +69,7 @@
         padding: 30px;
         background-color: #fff;
         border: 1px solid rgba(160, 160, 160, 0.3);
+        margin-bottom: 30px;
         .title{
           font-size: 22px;
           transition: all .3s;
