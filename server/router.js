@@ -14,4 +14,8 @@ router.get('/getBlogs',(req, res, next)=>{
   api.getBlogs(req, res, next);
 });
 
+router.get('/getBlogDetails',(req, res, next)=>{
+  api.getBlogDetails(req, res, next);
+});
+
 module.exports = router;

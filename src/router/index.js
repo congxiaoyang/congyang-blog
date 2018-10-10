@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/view/Home'
+import BlogList from '@/view/blog/BlogList'
+import BlogDetails from '@/view/blog/BlogDetails'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   mode: 'history',
@@ -16,6 +18,16 @@ export default new Router({
       path: '/home',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/blog/list',
+      name: 'BlogList',
+      component: BlogList
+    },
+    {
+      path: '/blog/details',
+      name: 'BlogDetails',
+      component: BlogDetails
     }
   ]
 })

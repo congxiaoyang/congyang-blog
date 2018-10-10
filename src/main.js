@@ -7,6 +7,7 @@ import ElementUI from 'element-ui'
 import axios from 'axios'
 import './assets/scss/variables.scss'
 import '../static/style/reset.css'
+import './assets/scss/public.scss'
 
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
@@ -18,4 +19,4 @@ new Vue({
   router,
   components: { App },
   template: '<App/>'
-})
+});

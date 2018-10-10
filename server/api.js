@@ -49,13 +49,13 @@ module.exports = {
     }
 
     var start  = (param.page - 1) * param.size;
-    var sql = 'select count(*) from blogs; select * from blogs limit ' + 　start +','+param.size;
+    var sql = 'select count(*) from blogs; select * from blogs limit '+ start +','+param.size;
 
     pool.getConnection(function (err,connection) {
       if (err){
-        console.log("数据库出错，原因是: " + error.message);
+        console.log("数据库出错，原因是: " + err.message);
       }
-      connection.query(sql,function (err,results) {
+      connection.query(sql,[start,param.size],function (err,results) {
         if(err){
           throw err
         }else {
@@ -67,6 +67,35 @@ module.exports = {
         }
       });
     })
+  },
+  getBlogDetails(req,res,next){
+    var param = '';
+    if(req.method == 'POST'){
+      param = req.body;
+    }else{
+      param = req.query || req.params;
+    }
+
+    if(param.id == '' || param.id == null || param.id == undefined){
+      res.setHeader('Content-Type','text/plain;charset=utf-8');
+      res.end(JSON.stringify({msg:'请传入参数',status:'error'}));
+      return;
+    }
+
+    pool.getConnection((err,connection) => {
+      var sql = sqlMap.getBlogDetails;
+      connection.query(sql,[param.id],(err,result) =>{
+        if(err){
+          throw err
+        }else{
+          console.log(result);
+          res.setHeader('Content-Type', 'text/plain;charset=utf-8');
+          res.end(JSON.stringify({msg:'操作成功',status:'success',data:result}));
+          connection.release();
+        }
+      })
+    })
+
   }
 };
 

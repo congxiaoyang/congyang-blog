@@ -15,7 +15,7 @@
             <router-link to="/home">首页</router-link>
           </li>
           <li>
-            <router-link to="/blog">博客</router-link>
+            <router-link to="/blog/list">博客</router-link>
           </li>
           <li>
             <router-link to="/article">随记</router-link>
