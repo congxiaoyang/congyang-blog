@@ -88,7 +88,6 @@ module.exports = {
         if(err){
           throw err
         }else{
-          console.log(result);
           res.setHeader('Content-Type', 'text/plain;charset=utf-8');
           res.end(JSON.stringify({msg:'操作成功',status:'success',data:result}));
           connection.release();

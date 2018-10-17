@@ -9,8 +9,8 @@ app.use(bodyParser.json());
 app.use('/api',routerApi);
 
 // 监听端口
-app.listen('3000');
-console.log('success listen at port:3000...');
+app.listen('3001');
+console.log('success listen at port:3001...');
 
 
 
