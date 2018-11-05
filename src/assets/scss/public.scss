@@ -1,4 +1,12 @@
 /* 公共的样式 */
+
+html{
+  height: 100%;
+}
+body{
+  min-height: 100%;
+  position: relative;
+}
 .container{
   padding: 50px;
 }

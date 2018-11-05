@@ -49,7 +49,7 @@ module.exports = {
     }
 
     var start  = (param.page - 1) * param.size;
-    var sql = 'select count(*) from blogs; select * from blogs limit '+ start +','+param.size;
+    var sql = 'select count(*) from blogs; select * from blogs limit ' + 　start +','+param.size;
 
     pool.getConnection(function (err,connection) {
       if (err){

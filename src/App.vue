@@ -19,5 +19,7 @@
 </script>
 
 <style>
-
+  #app{
+    min-height: 100%;
+  }
 </style>

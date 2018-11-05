@@ -5,12 +5,15 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import axios from 'axios'
+import Marked from './common/marked.js'
 import './assets/scss/variables.scss'
 import '../static/style/reset.css'
+import '../static/style/markdown.css'
 import './assets/scss/public.scss'
 
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
+Vue.use(Marked);
 Vue.prototype.$http = axios;
 
 /* eslint-disable no-new */
