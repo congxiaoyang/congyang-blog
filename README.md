@@ -27,6 +27,5 @@ Vue2.0+ElementUi+Webpack+axios+express+mysql
 
 ### 首页图
 
-个人博客-用户端-首页.png
-
+![首页](https://github.com/congxiaoyang/congyang-blog/blob/master/static/images/indexPage.png);
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
