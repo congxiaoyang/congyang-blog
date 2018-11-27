@@ -38,7 +38,7 @@
       },
       mounted:function () {
         var _this = this;
-        this.$http.get('/api/getBlogs',{
+        this.$http.get(process.env.API_HOST+'getBlogs',{
           params:{
             page:1,
             size:10,

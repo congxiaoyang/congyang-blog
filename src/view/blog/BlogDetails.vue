@@ -56,7 +56,7 @@
     mounted: function () {
       var _this = this,
         blogId = this.$route.query.id;
-      this.$http.get('/api/getBlogDetails', {
+      this.$http.get(process.env.API_HOST+'getBlogDetails', {
         params: {id: blogId}
       })
         .then((res) => {

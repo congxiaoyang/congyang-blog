@@ -42,7 +42,7 @@
     },
     mounted:function(){  // 测试，
       var _this = this;
-      this.$http.get('/api/getBlogs',{
+      this.$http.get(process.env.API_HOST+'getBlogs',{
         params: {page: 1,size:10,date:'',search:''}
       })
         .then((res) =>{

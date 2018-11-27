@@ -26,7 +26,7 @@
         }
       },
       mounted:function(){  // 获取到用户信息，展示在aside中
-        this.$http.get('/api/getUsersInfo',{
+        this.$http.get(process.env.API_HOST+'getUsersInfo',{
           params: {id: 0}
         })
           .then((res) =>{
