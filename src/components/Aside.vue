@@ -8,6 +8,10 @@
         <p>{{userName}}</p>
       </div>
       <div class="intro">{{userIntro}}</div>
+      <div class="contact-container">
+        <p>欢迎加V哦～</p>
+        <img src="../../static/images/wechat.jpeg" alt="">
+      </div>
     </div>
   </aside>
 </template>
@@ -56,6 +60,16 @@
       margin-top: 24px;
       color: #646464;
       line-height: 1.5em;
+    }
+    .contact-container{
+      margin-top: 20px;
+      img{
+        width: 100%;
+        margin-top: 10px;
+      }
+      p{
+        color: #646464;
+      }
     }
   }
 </style>
