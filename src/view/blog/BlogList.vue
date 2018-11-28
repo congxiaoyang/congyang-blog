@@ -8,7 +8,7 @@
           <!--</div>-->
           <div class="blog-container">
             <div v-for="blog in blogList" class="item public-box">
-              <router-link target="_blank" :to="{path:'/blog/details',query:{id:blog.id}}" class="title">{{blog.title}}</router-link>
+              <router-link :to="{path:'/blog/details',query:{id:blog.id}}" class="title">{{blog.title}}</router-link>
               <div class="content">{{blog.abstract}}</div>
               <div class="foo clearfix">
                 <div class="fl">
