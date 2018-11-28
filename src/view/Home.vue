@@ -12,7 +12,7 @@
               <div class="content">{{blog.abstract}}</div>
               <div class="foo clearfix">
                 <div class="fl">
-                  <router-link target="_blank" class="goDetailsBtn" :to="{path:'/blog/details',query:{id:blog.id}}">
+                  <router-link class="goDetailsBtn" :to="{path:'/blog/details',query:{id:blog.id}}">
                     看详情
                   </router-link>
                 </div>
